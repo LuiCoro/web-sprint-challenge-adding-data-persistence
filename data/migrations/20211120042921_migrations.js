@@ -9,6 +9,12 @@ exports.up = function(knex) {
         tbl.boolean('project_completed').defaultTo(false)
       })
 
+      .createTable('resources', tbl => {
+        tbl.increments('resource_id')
+
+        tbl.string('resource_name').notNullable().unique()
+        tbl.string('resource_description')
+      })
 
 };
 

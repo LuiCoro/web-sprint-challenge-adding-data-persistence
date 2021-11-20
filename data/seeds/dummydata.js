@@ -17,3 +17,23 @@ exports.seed = function (knex) {
         ])
       })
 }
+
+
+exports.seed = function (knex) {
+  return knex('resources').truncate()
+      .then(function () {
+        return knex('resources').insert([
+          {
+            resource_name: 'Google',
+            resource_description: 'Gotta Love Google',
+          },
+          {
+            resource_name: 'Youtube',
+            resource_description: 'You can learn anything on youtube',
+          },
+          {
+            resource_name: 'Wing it!',
+          }
+        ])
+      })
+}
