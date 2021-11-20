@@ -23,8 +23,16 @@
     "supertest": "6.1.6"
   },
   "dependencies": {
+    "express": "^4.17.1",
     "knex": "^0.95.14",
     "nodemon": "^2.0.15",
     "sqlite3": "^5.0.2"
-  }
+  },
+  "description": "**Read these instructions carefully. Understand exactly what is expected _before_ starting this Sprint Challenge.**",
+  "bugs": {
+    "url": "https://github.com/BloomInstituteOfTechnology/web-sprint-challenge-adding-data-persistence/issues"
+  },
+  "homepage": "https://github.com/BloomInstituteOfTechnology/web-sprint-challenge-adding-data-persistence#readme",
+  "keywords": [],
+  "author": ""
 }
