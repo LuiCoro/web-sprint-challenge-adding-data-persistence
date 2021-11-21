@@ -1,13 +1,23 @@
+const projects = [
+  {
+    project_name: "Weather App",
+    project_description: "Able to tell the user what is the weather forecast",
+    project_completed: true
+  },
+  {
+    project_name: "Youtube Clone",
+    project_description: "Able to Search for videos, watch them and even look at the comments",
+    project_completed: false
+  },
+  {
+    project_name: "Rick & Morty Character Info",
+    project_description: "Displays information about the character",
+    project_completed: false
+  }
+]
 
-exports.seed = function(knex) {
-  // Deletes ALL existing entries
-  return knex('table_name').del()
-    .then(function () {
-      // Inserts seed entries
-      return knex('table_name').insert([
-        {id: 1, colName: 'rowValue1'},
-        {id: 2, colName: 'rowValue2'},
-        {id: 3, colName: 'rowValue3'}
-      ]);
-    });
-};
+exports.project = projects
+
+exports.seed = function (knex) {
+  return knex('projects').insert(projects)
+}

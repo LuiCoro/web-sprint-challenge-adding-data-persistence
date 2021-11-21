@@ -1,13 +1,20 @@
+const resources = [
+  {
+    resource_name: 'Youtube',
+    resource_description: "Able to learn anything and everything!"
+  },
+  {
+    resource_name: 'Knex Documentation',
+    resource_description: "Documentation about Knex!"
+  },
+  {
+    resource_name: 'Udemy',
+    resource_description: "Watch more videos on projects"
+  },
+]
+
+exports.resources = resources
 
 exports.seed = function(knex) {
-  // Deletes ALL existing entries
-  return knex('table_name').del()
-    .then(function () {
-      // Inserts seed entries
-      return knex('table_name').insert([
-        {id: 1, colName: 'rowValue1'},
-        {id: 2, colName: 'rowValue2'},
-        {id: 3, colName: 'rowValue3'}
-      ]);
-    });
-};
+  return knex('resources').insert(resources)
+}
