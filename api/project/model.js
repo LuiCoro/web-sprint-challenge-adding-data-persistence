@@ -15,7 +15,25 @@ const getProjects = async () => {
   return updatedRows;
 };
 
+const getProjectByID = () => {
+  return db('projects').where('project_id, id').first();
+}
+const createProject = async (project) => {
+  const [id] = await db('projects').where('project').insert(project)
+  const newProject = await getProjectByID(id)
+
+  if(newProject.project_completed === 0 ) {
+    return {
+      ...newProject, project_completed: false
+    }
+  } else {
+    return {
+      ...newProject, project_completed: true
+    }
+  }
+}
 
 module.exports = {
-  getProjects
+  getProjects,
+  createProject
 }
