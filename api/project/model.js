@@ -15,8 +15,8 @@ const getProjects = async () => {
   return updatedRows;
 };
 
-const getProjectByID = () => {
-  return db('projects').where('project_id, id').first();
+const getProjectByID = (id) => {
+  return db('projects').where('project_id', id).first();
 }
 const createProject = async (project) => {
   const [id] = await db('projects').where('project').insert(project)
